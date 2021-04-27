@@ -16,9 +16,10 @@ class App extends React.Component {
     } else if (button==="-"){
       if (this.state.runningTotal===0) {
         this.setState((state) => {return {runningTotal:(parseFloat(state.answer)), answer:"", currentOperation:"-"}})
-      }
+        /* this missing else was the small error that broke - */
+      } else{
       this.setState((state) => {return {runningTotal:state.runningTotal-parseFloat(state.answer), answer:"", currentOperation:"-"}})
-    
+      }
 
     } else if (button==="=") {
       let total=0
